@@ -1,0 +1,25 @@
+---
+title: "README"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Key West Temps
+
+
+It's cold in Massachusetts, so here's something to warm you up!
+
+
+```{r, echo=FALSE}
+library(ggplot2)
+library(Stat2Data)
+```
+
+```{r,echo=FALSE}
+data("KeyWestWater")
+ggplot(data = KeyWestWater, aes(x = t, y = WaterTemp, color = WaterTemp)) + geom_point() + labs(title = "Key West, FL Water Temperatures", x = "Hour", y = "Water Temp(in F)") + scale_color_gradient(low = "#5E7CE2", high = "#F64740")
+```
+
